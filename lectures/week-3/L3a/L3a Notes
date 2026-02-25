@@ -1,0 +1,25 @@
+L3a Notes
+
+Single Value Decomposition (SVD)
+A = USV^T
+    U is orthognal: U^T*U = Im --> m x m
+    S rectangular diagonal with singular values σ1 ≥ ... ≥ σr > 0 on first r diagonal entries, zeroes elsewhere --> m x n
+    V is orthogonal matrix --> n x n 
+
+SVD stores all m left-singular vectors and all n right-singular vectors, even though
+only the first r correspond to nonzero singular values
+
+How to Compute SVD?
+    Initialization: 
+        Given Real matrix A ϵ R^mxn, form B <-- A^T*A and specify nonnegative tolerance
+        τ for clipping tiny negative eigenvalues that may arise from numerical roundoff
+
+    1. Computer Eigendecomposition B = VΛV^T
+    2. Sort eigenvalues in descending order and reorder the columns of V to match
+    3. Define singular values σi <-- sqrt(max(λi, 0)) and construct S
+
+For each σi > 0 
+    1. Computer ui <-- Avi
+
+
+
